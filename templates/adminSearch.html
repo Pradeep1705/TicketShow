@@ -1,0 +1,23 @@
+
+<h1>Search Results</h1>
+
+<h2>Venues</h2>
+<ul>
+{% for venue in venues %}
+    <li><a href="/adshow/{{ venue.ID }}/">{{ venue.name }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Place</h2>
+<ul>
+{% for venue in places %}
+    <li><a href="/ushow/{{ venue.ID }}/">{{ venue.name }}</a> at {{venue.place}}</li>
+{% endfor %}
+</ul>
+
+<h2>Shows</h2>
+<ul>
+{% for show in shows %}
+    <li>{{ show.name }} at <a href="/adshow/{{ show.venueID }}/">{{show.venue.name}}</a></li>
+{% endfor %}
+</ul>

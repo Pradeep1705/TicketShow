@@ -1,0 +1,21 @@
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Deletion</h5>
+      </div>
+      <div class="modal-body">
+          <h3>Are you sure you want to delete {{ data.name }}?</h3>
+          
+          <a href="{{url_for('admin_venue')}}">No</a>
+          <br><br>
+          <form method="post">
+              <input type="submit" value="Confirm">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+

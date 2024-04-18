@@ -1,0 +1,70 @@
+
+    
+    {% extends "index.html" %}    
+
+    {% block ticktemp %}
+    
+    <h1>Add Show</h1>
+    <br>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="form-row">
+            <input type=file name=upload_image>
+        
+        </div>
+
+        
+    
+       <br>
+
+        <div class="form-row">
+            <div class="col-lg-7">
+                <input type="Name" placeholder="Movie Name" class="form-control my-3 p-4" name="movieName">
+            </div>
+        </div>
+    
+       <br>
+
+        <div class="form-row">
+        <div class="col-lg-7">
+            <input type="tag" placeholder="Tags" class="form-control my-3 p-4" name="tag">
+        </div>
+        </div>
+
+        <br>
+
+        
+        <div class="form-row">
+            <div class="col-lg-7">
+                <label for="date">Date:</label>
+                <input type="date" id="Date" name="date">
+            </div>
+        </div>
+        
+        <br>
+
+        <div class="form-row">
+            <div class="col-lg-7">
+                <input type="ticket" placeholder="Ticket Price" class="form-control my-3 p-4" name="price">
+            </div>
+            </div>
+            
+            <br>
+
+            <div class="form-row">
+                <div class="col-lg-7">
+                    <input type="rating" placeholder="Rating" class="form-control my-3 p-4" name="rating">
+                </div>
+                </div>
+                
+                <br>
+    
+        <div class="form-row">
+            <div class="col-lg-7">
+              <input type="submit" class="form-control btn btn-primary submit px-3" value="Add show">
+        </div>
+    </form>
+    
+       
+    
+      {% endblock %}

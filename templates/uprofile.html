@@ -1,0 +1,73 @@
+{% extends "index.html" %}    
+
+{% block ticktemp %}
+
+<style>
+    .gradient-custom {
+background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+}
+</style>
+
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{{url_for('user_venue')}}" class="nav-link px-2 text-white">Home</a></li>
+        <li><a href="{{url_for('user_profile')}}" class="nav-link px-2 text-white">Profile</a></li>
+      </ul>
+      <form method="POST" action="{{url_for('search')}}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        
+        <input type="search" class="form-control form-control-dark "  placeholder="Search..." aria-label="Search" name="searched">
+      </form>
+      <div class="text-end">
+        <button type="button" class="btn btn-warning"><a style="color: rgb(0, 0, 0);" href="{{url_for('logout')}}">Log Out</a></button>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+
+<section class="vh-100" style="background-image: url(./static/images/feedbg.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    
+    
+    
+    
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-md-9 col-lg-7 col-xl-5">
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body p-4">
+                  <div class="d-flex text-black">
+                    <div class="flex-shrink-0">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                        alt="Generic placeholder image" class="img-fluid"
+                        style="width: 180px; border-radius: 10px;">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h2 class="mb-1">{{session["user_deets"]["UserName"]}}</h2  >
+                      
+                      <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                        style="background-color: #efefef;">
+                        
+                      <div class="d-flex pt-1">
+                        <a href="{{url_for('view_ticket')}}"><button type="button" class="btn btn-outline-primary me-1 flex-grow-1">View Tickets</button></a>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+  </section>
+
+
+  
+{% endblock %}

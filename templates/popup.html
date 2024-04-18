@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block ticktemp %}
+
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Booking Sucessful!!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Your Ticket is booked sucessfully. Enjoy your Movie!!!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+  </script>
+
+  {% endblock %}

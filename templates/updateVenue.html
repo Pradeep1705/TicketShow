@@ -1,0 +1,58 @@
+
+    
+    {% extends "index.html" %}    
+
+    {% block ticktemp %}
+    
+    <h1>Add Venue</h1>
+    <br>
+    
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="form-row">
+            <input type=file name=upload_image value="{{venue.img}}">
+        
+        </div>
+
+        <br>
+
+        
+        <div class="form-row">
+            <div class="col-lg-7">
+                <input type="venueName" placeholder="Venue Name" class="form-control my-3 p-4" value="{{venue.name}}" name="venueName">
+            </div>
+        </div>
+    
+       <br>
+
+        <div class="form-row">
+        <div class="col-lg-7">
+            <input type="place" placeholder="Place" class="form-control my-3 p-4" value="{{venue.place}}" name="place">
+        </div>
+        </div>
+        
+        <br>
+
+        <div class="form-row">
+            <div class="col-lg-7">
+                <input type="capacity" placeholder="Capacity" class="form-control my-3 p-4" value="{{venue.capacity}}" name="capacity">
+            </div>
+            </div>
+            
+            <br>
+
+            <div class="form-row">
+                <div class="col-lg-7">
+                    <input type="rating" placeholder="Rating" class="form-control my-3 p-4" value="{{venue.rating}}" name="rating">
+                </div>
+                </div>
+                
+                <br>
+    
+        <div class="form-row">
+            <div class="col-lg-7">
+                <input type="submit" class="form-control btn btn-primary submit px-3" value="Update venue">
+        </div>
+    </form>
+       
+    
+    {% endblock %}

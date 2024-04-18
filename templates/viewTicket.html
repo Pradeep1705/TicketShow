@@ -1,0 +1,89 @@
+{% extends "index.html" %}    
+
+{% block ticktemp %}
+
+<style>
+    .gradient-custom {
+background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+}
+</style>
+
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{{url_for('user_venue')}}" class="nav-link px-2 text-white">Home</a></li>
+        <li><a href="{{url_for('user_profile')}}" class="nav-link px-2 text-white">Profile</a></li>
+      </ul>
+      <form method="POST" action="{{url_for('search')}}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        
+        <input type="search" class="form-control form-control-dark "  placeholder="Search..." aria-label="Search" name="searched">
+      </form>
+      <div class="text-end">
+        <button type="button" class="btn btn-warning"><a style="color: rgb(0, 0, 0);" href="{{url_for('logout')}}">Log Out</a></button>
+      </div>
+    </div>
+  </div>
+</header>
+{% for res in user %}
+<section class="vh-100" style="background-image: url(./static/images/feedbg.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <img src="./static/images/tickets.jpg"
+                  alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                <h5>{{res.showname}}</h5>
+                
+                <i class="far fa-edit mb-5"></i>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-20">
+                  <h6>Ticket Info</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-2">
+                    <div class="col-6 mb-3 ">
+                      <h6>Venue Name</h6>
+                      <p class="text-muted">{{res.venuename}}</p>
+                    </div>
+                    <div class="col-6 mb-3 ">
+                      <h6>Movie Name</h6>
+                      <p class="text-muted">{{res.showname}}</p>
+                    </div>
+                    <div class="col-6 mb-3 mr-3">
+                      <h6>Date</h6>
+                      <p class="text-muted">{{res.date}}</p>
+                    </div>
+                  </div>
+                  <h6></h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>seats Booked</h6>
+                      <p class="text-muted">{{res.seats}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Price</h6>
+                      <p class="text-muted">Rs.{{res.price}}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-start">
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+{% endblock %}
